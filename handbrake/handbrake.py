@@ -121,7 +121,7 @@ def main():
         execute_me = f"{SCRIPT_DIR}\\{HANDBRAKE_EXECUTABLE}"
         start_time = current_time_ms()
         avgencoding_pattern = r'average encoding speed for job is (\d+\.\d+) fps'
-        command = f"{execute_me} -i {SCRIPT_DIR}\\big_buck_bunny_1080p24.y4m -o {SCRIPT_DIR}\\bbboutput.mp4 --preset-import-file {preset['file']} --preset {preset['name']}"
+        command = f"{execute_me} -i {SCRIPT_DIR}\\stone_1080p24.mp4 -o {SCRIPT_DIR}\\bbboutput.mp4 --preset-import-file {preset['file']} --preset {preset['name']}"
 
         output = subprocess.check_output(
             command,

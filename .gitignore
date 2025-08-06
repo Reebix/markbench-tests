@@ -11,6 +11,7 @@
 *.csv
 run/
 benchmark-launcher-cli-3.1.0-windows.zip
+flac/output
 flac-1.4.3-win/
 flac-1.4.3-win.zip
 primesieve-12.3*
@@ -41,3 +42,5 @@ mingw64/
 
 # python
 __pycache__/
+
+

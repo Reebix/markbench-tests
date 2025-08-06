@@ -46,7 +46,7 @@ with Popen([COMMAND, "b", "3"], cwd=os.path.dirname(
     list_of_strings = stdout_data.decode('utf-8').splitlines()
 
     SPEED_PATTERN = r'^Avr:\s*([0-9]*)\s.*\|\s*([0-9]*)\s.*$'
-    VERSION_PATTERN = r'7-Zip \(r\) (\d+\.\d+).*'
+    VERSION_PATTERN = r'(\d+\.\d+).*'
 
     VERSION = ""
     SPEED_C = ""
@@ -58,10 +58,10 @@ with Popen([COMMAND, "b", "3"], cwd=os.path.dirname(
             continue
         logging.info(line.strip())
         if '7-Zip' in line:
-            VERSION = re.match(VERSION_PATTERN, line).group(1)
+            VERSION = re.search(VERSION_PATTERN, line).group(1)
         if 'Avr:' in line:
-            SPEED_C = re.match(SPEED_PATTERN, line).group(1)
-            SPEED_D = re.match(SPEED_PATTERN, line).group(2)
+            SPEED_C = re.search(SPEED_PATTERN, line).group(1)
+            SPEED_D = re.search(SPEED_PATTERN, line).group(2)
 
     t2 = time.time()
     logging.info("Benchmark took %s seconds", round((t2 - t1), 3))

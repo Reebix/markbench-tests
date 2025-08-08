@@ -44,3 +44,10 @@ mingw64/
 __pycache__/
 
 
+/cinebench_2023/cb_ranking
+/cinebench_2023/corelibs
+/cinebench_2023/resource
+cinebench_2023/CinebenchR23.zip
+cinebench_2023/libmmd.dll
+cinebench_2023/msvcp140.dll
+cinebench_2023/vcruntime140.dll
